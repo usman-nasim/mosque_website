@@ -3,6 +3,8 @@ import { DM_Sans } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
 import Header from "@/components/Header";
+import DarkTheme from "../components/theme-provider";
+import Footer from "@/components/Footer";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -19,8 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(dmSans.className, "antialiased")}>
-        <Header />
+        <DarkTheme>
+          <Header />
         {children}
+        <Footer/>
+        </DarkTheme>
       </body>
     </html>
   );
