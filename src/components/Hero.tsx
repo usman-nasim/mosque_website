@@ -39,7 +39,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p className="text-gray-300 text-center md:text-right text-md md:text-lg leading-relaxed max-w-md ml-auto">
-            Whether it's an inward reflection or an outward action, true faith shines through in everything you do. Embrace the power of purity in faith and let it guide you in every aspect of life.
+            Whether its an inward reflection or an outward action, true faith shines through in everything you do. Embrace the power of purity in faith and let it guide you in every aspect of life.
           </p>
         </motion.div>
       </div>

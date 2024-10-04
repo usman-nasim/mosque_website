@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Eye, Target, Book, Heart, Scale, Users } from "lucide-react"
 import { motion } from "framer-motion"
