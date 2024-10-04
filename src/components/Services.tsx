@@ -1,9 +1,11 @@
 "use client"
 
 import React from 'react'
+import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Star, Book, Heart, Users, GraduationCap } from "lucide-react"
 import { motion } from "framer-motion"
+import masjidImg from '@/images/masjid.jpg'
 
 const services = [
   {
@@ -11,7 +13,7 @@ const services = [
     description: "Dive deep into the holy Quran with our expert scholars. Learn tajweed, tafsir, and memorization techniques.",
     icon: <Book className="h-8 w-8 text-primary" />,
     rating: 4.8,
-    image: "/placeholder.svg?height=400&width=600"
+    image: masjidImg
   },
   {
     title: "Islamic Counseling",
@@ -73,12 +75,20 @@ export default function Services() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
               <Card className="flex flex-col h-full overflow-hidden relative">
-                <div className="absolute inset-0 bg-cover bg-center z-0" style={{backgroundImage: `url(${service.image})`}} />
+                <div className="absolute inset-0 z-0">
+                  <Image 
+                    src={service.image}
+                    alt={service.title}
+                    layout="fill"
+                    objectFit="cover"
+                    quality={100}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-black/50 z-10" />
                 <CardHeader className="relative z-20">
                   <CardTitle className="flex items-center text-2xl font-semibold mb-4 text-white">
