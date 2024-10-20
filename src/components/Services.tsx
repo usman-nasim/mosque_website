@@ -1,11 +1,10 @@
-"use client"
+'use client'
 
 import React from 'react'
 import Image from 'next/image'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Star, Book, Heart, Users, GraduationCap } from "lucide-react"
 import { motion } from "framer-motion"
-import masjidImg from '@/images/masjid.jpg'
 
 const services = [
   {
@@ -13,7 +12,7 @@ const services = [
     description: "Dive deep into the holy Quran with our expert scholars. Learn tajweed, tafsir, and memorization techniques.",
     icon: <Book className="h-8 w-8 text-primary" />,
     rating: 4.8,
-    image: masjidImg
+    image: "/images/masjid.jpg"
   },
   {
     title: "Islamic Counseling",

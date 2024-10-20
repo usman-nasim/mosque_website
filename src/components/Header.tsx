@@ -1,22 +1,15 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Menu, Moon, Sun } from 'lucide-react'
-import { useTheme } from "next-themes"
+import { Menu } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -24,33 +17,6 @@ const navItems = [
   { href: '/services', label: 'Services' },
   { href: '/contact', label: 'Contact' },
 ]
-
-function ModeToggle() {
-  const { setTheme } = useTheme()
-
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
-}
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -76,7 +42,6 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center space-x-4">
-          <ModeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
